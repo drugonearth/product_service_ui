@@ -2,6 +2,7 @@ import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import Register from './components/Register';
 import Login from './components/Login';
+import ProductList from "./components/ProductList";
 
 const App: React.FC = () => {
     return (
@@ -11,6 +12,7 @@ const App: React.FC = () => {
                     <Link className="navbar-brand" to="/">My App</Link>
                     <div className="navbar-nav">
                         <Link className="nav-item nav-link" to="/">Home</Link>
+                        <Link className="nav-item nav-link" to="/products">Products</Link>
                         <Link className="nav-item nav-link" to="/register">Register</Link>
                         <Link className="nav-item nav-link" to="/login">Login</Link>
                     </div>
@@ -20,6 +22,7 @@ const App: React.FC = () => {
                 <Routes>
                     <Route path="/register" element={<Register />} />
                     <Route path="/login" element={<Login />} />
+                    <Route path="/products" element={<ProductList />} />
                     <Route path="/" element={<h2>Welcome to our app!</h2>} />
                 </Routes>
             </div>

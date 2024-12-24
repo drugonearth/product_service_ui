@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import {API_BASE_URL} from "../config";
 
 const Register: React.FC = () => {
     const [formData, setFormData] = useState({
@@ -17,7 +18,7 @@ const Register: React.FC = () => {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:8080/users', formData, {
+            const response = await axios.post(`${API_BASE_URL}/users`, formData, {
                 headers: { 'Content-Type': 'application/json' },
             });
             console.log('Registration successful', response.data);
